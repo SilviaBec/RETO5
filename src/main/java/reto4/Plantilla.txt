@@ -1,0 +1,75 @@
+/*
+ * Pueda usar esta plantilla para la carga del reto a iMaster
+ * Copie las clases de los paquetes Modelo, Vista, Controlador y Util
+ * No incluya los import de los archivos .java solo las clases
+ */
+// Importaciones necesarias en iMaster
+//esta es una nota mia de Silvia empieza aca
+//invocar las librerias lo puedo organizar como quiera
+//primero driver luego statement etc como yo quiera ojala en orden logico
+// jdbc es una api encargada de hacer el contacto con la base de datos
+//mi nota termina aca
+
+import java.sql.DriverManager;
+//Silvia: driver manager es la clase encargada de coger las caracteristicas de una base de datos para generar
+//la conexion, tiene una ruta o url que dice donde esta la base de d.puede tener usuario, clave, contraseña. 
+//datos de configuracion importantes para establecer comunicacion con las bases de datos
+//es como un mensajero y entrega a un objeto de a la clase conexxion
+
+import java.sql.Connection;
+//recibe la comunicacion de driver manager 
+//root es el super ususario que puede tener acceso a toda la Bdatos
+//la clase conexion mantiene viva y estable la conexion 
+
+import java.sql.Statement;
+import java.sql.PreparedStatement;
+// los statements ya son las consultas a las bases de datos
+// tienen la sentencia sql que se va a ir a preguntar a la BDatos
+// tiene el comando, la etiqueta para la consulta
+
+import java.sql.ResultSet;
+//este comando recibe la informacion en tipo de tablas, recibe la consulta
+//de statement y vuelve con informacion 
+
+//esas 5 etapas se llaman JDBC y se implementan en varias partes de la
+//arquitectura modelo vista computador
+//jdbc es una api que tiene java para conectividad de proyecto java y una basedatos(BD)
+
+
+import java.sql.SQLException;
+
+import java.util.ArrayList;
+
+// Util (No modificar)
+class JDBCUtilities {
+    private static final String DATABASE_LOCATION = "ProyectosConstruccion.db";
+
+    public static Connection getConnection() throws SQLException {
+        String url = "jdbc:sqlite:"+DATABASE_LOCATION;
+
+        return DriverManager.getConnection(url);
+    }
+}
+
+// Remplace en adelante por las clases de sus archivos .java
+
+// Vista
+class VistaRequerimientos {}
+
+// Controlador
+class ControladorRequerimientos {}
+
+// Modelo
+// VO
+class Requerimiento_1 {}
+
+class Requerimiento_2 {}
+
+class Requerimiento_3 {}
+
+// DAO
+class Requerimiento_1Dao {}
+
+class Requerimiento_2Dao {}
+
+class Requerimiento_3Dao {}
